@@ -33,7 +33,7 @@ var
     res: string;
 begin
     ServicePointManager.SecurityProtocol := SecurityProtocolType.Tls12;
-    request := HttpWebRequest(WebRequest.Create('https://api.telegram.org/bot1157303469:AAG9iUMm_meciVW8Vwiqb1ZdAgepWOyQowQ/getUpdates'));
+    request := HttpWebRequest(WebRequest.Create(telegramUrl + TBotToken + '/getUpdates'));
     request.Method := 'GET';
     response := request.GetResponse;
     datastream := response.GetResponseStream;
